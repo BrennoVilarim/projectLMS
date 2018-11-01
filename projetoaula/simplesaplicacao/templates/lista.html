@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{%static 'css/home.css'%}
+
+{% block content %}
+
+        <h1>Tags</h1>
+        
+        <ul>
+            {% for i in 'xxxxx' %}
+                <li>Número: {{forloop.counter}}</li>
+            {% endfor %}  
+        </ul>  
+        
+        <ul>
+            {% for i in 'abcdefghij' %}
+                 {% if i == "a" %}
+                    <li>Letra A</li>
+                 {% elif i == 'b' %}
+                    <li>Letra B</li>
+                 {% else %}
+                    <li>Não é a nem b.</li>
+                 {% endif %} 
+            {% endfor %}  
+        </ul>  
+
+        <ul>
+        {% for i in 'abcdefghij' %}
+            {% if forloop.last %}
+              <li>Fim da lista.</li>                    
+            {% else %}
+              <li>Letra: {{i}}</li>
+            {% endif %} 
+        {% endfor %}  
+        </ul> 
+
+        <ul>
+            {% for i in lista1 %}
+                <li>{{i}}</li> 
+            {% endfor %}  
+        </ul>             
+        <p>Fim</p>
+{% endblock content %}
